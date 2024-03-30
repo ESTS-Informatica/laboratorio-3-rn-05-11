@@ -1,10 +1,10 @@
 # Programação Orientada por Objetos 2023/2024
 
-## Ficha de Laboratório 5
+## Ficha de Laboratório 3
 
 ### Objetivo
 
-> - Introdução à herança de classes
+- Introdução à herança de classes
 
 ## Programa
 
