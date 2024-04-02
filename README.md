@@ -8,7 +8,7 @@
 
 ## Programa
 
-Pretende-se desenvolver um protótipo para uma empresa transportadora que possui uma frota de veículos e aviões. Os veículos são utilizados na venda de serviços de fretagem e transporte, pelos quais são cobradas taxas que representam os seus honorários. Esta empresa possui na sua frota um conjunto de veículos de Transporte terrestre e de Transporte aéreo, sendo que os Camiões e Furgonetas são considerados Transportes Terrestres.
+Pretende-se desenvolver um protótipo para uma empresa transportadora que possui uma frota de veículos e aviões. Os veículos são utilizados na venda de serviços de fretagem e transporte, pelos quais são cobradas taxas que representam os seus honorários. Esta empresa possui na sua frota um conjunto de veículos de Transporte terrestre e de Transporte aéreo, sendo que os Camiões e Furgonetas são considerados Transportes Terrestres. Para o desenvolvimento deste programa, o repositório contém uma classe `Transporte` e um conjunto de classes de teste para testar as classes a desenvolver nesta ficha.
 
 ## Regras de implementação
 
@@ -23,24 +23,7 @@ Pretende-se desenvolver um protótipo para uma empresa transportadora que possui
 
 ### Nível 1:
 
-1. Implemente a classe `Transport` com os seguintes atributos: 
-  - `id` ( `String` ) - Identificador único (gerado automaticamente);
-  - `origin` ( `String` ) - Identifica a localização do ponto de partida do transporte;
-  - `destination` ( `String` ) - Identifica a localização do ponto de chegada do transporte;
-  - `price` ( `double` ) - O custo total do transporte;
-  - `fees` ( `double` ) - O valor dos honorários cobrados pela empresa (é uma taxa a aplicar ao custo total do transporte);
-  - `available` ( `boolean` ) - permite saber se o transporte está disponivel.
-
-2. Crie um construtor que não recebe parâmetros. Este construtor deverá de atribuir um número automático e sequencial ao atributo `id` no seguinte formato: `T-001` (para o primeiro `Transport` criado), `T-002` (para o segundo `Transport` criado), `T-003` (para o terceiro `Transport` criado) e assim sucessivamente. Os atributos do tipo `String` deverão ser inicializados com uma `String` vazia, os honorários e o custo total deverão ser inicializados a `0`, e o valor Booleano a `true`.
-
-  - Adicione ainda os habituais métodos seletores e modificadores que achar necessários.
-
-3. Crie o método `toString()` na classe `Transport` que retorna a informação dos atributos na forma de texto (`String`). Utilize a classe `StringBuilder` para este efeito.
-
-
-### Nível 2:
-
-1. Aplicando a herança derive da classe `Transport`, classes para `GroundTransportation` e `AirTransportation`, tendo em consideração que cada uma das suas instâncias, para além dos atributos que caracterizam a classe `Transport`, acrescentam os seguintes atributos:
+1. Aplicando a herança derive da classe `Transport`, as classes `GroundTransportation` e `AirTransportation` para representar um transporte terrestre e um transporte áereo. Têm em consideração que, para além dos atributos que caracterizam um objeto de tipo `Transport`, os objetos das subclasses possuem os seguintes atributos:
 
   - Para `GroundTransportation`:
     - `licensePlate` ( `String` ) - Atributo com a matrícula do veículo
@@ -51,28 +34,26 @@ Pretende-se desenvolver um protótipo para uma empresa transportadora que possui
 
 - Considere que os honorários para os transportes terrestres é sempre de `3%` e para os transporte aéreo é de `4%`.
 
-2. 
-  
+### Nível 2:
+
 - Para a classe `GroundTransportation`:    
   - Acrescente à classe criada o respectivo construtor que recebe por parâmetros a matrícula.
   - Acrescente os métodos seletores e modificadores que julgue serem necessários.
-  - Crie o método `toString()` na classe `GroundTransportation` que retorne a informação dos atributos na forma de texto (`String`).
-    - Nota: reutilize o método idêntico desenvolvido no nível 1 para a classe `Transport`.
 
 - Para a classe `AirTransportation`:
   - Acrescente à classe criada o respectivo construtor, que recebe por parâmetros o nome do avião e o número de contentores.
   - Acrescente à classe os métodos seletores e modificadores que julgue serem necessários.
-  - Crie o método `toString()` na classe `AirTransportation` que retorne a informação dos atributos na forma de texto (`String`).
-    - Nota: reutilize o método idêntico desenvolvido no nível 1 para a classe `Transport`.
 
 
 ### Nível 3:
 
-1. Implemente na classe `Transport` um método chamado `getPriceWithFees` que retorne o preço do transporte com a taxa de honorários cobrados.
+1. Implemente nas classse `GroundTransportation` e `AirTransportation` o método `getPriceWithFees` que retorne o preço do transporte com a taxa de honorários cobrados.
 
-2. Implemente na classe `Transport` um método chamado `getTransportType` que devolve uma `String` com a descrição do tipo de transporte (não esquecer de desenvolver este método em todas as classes derivadas).
+2. Implemente nas duas sub classes anteriores o método `getTransportType` que devolve uma `String` com a descrição do tipo de transporte.
 
-3. Ainda na classe `Transport`, altere o método `toString()` de forma a mostrar em primeiro lugar o tipo de transporte e, em último lugar, o preço total do transporte com os honorários cobrados.
+3. Implemente nas duas sub classes anteriores o método `toString()`, que retorne a informação dos atributos na forma de texto (`String`).
+    - Nota: reutilize o método idêntico da super classe.
+
 
 ### Nível 4:
 
@@ -86,7 +67,7 @@ Pretende-se desenvolver um protótipo para uma empresa transportadora que possui
   - `packages` ( `int` ) - Atributo para o número de pacotes que a furgoneta transporta.
 
 2. 
- 
+
 - Para `Lorry`:
 
   - Acrescente à classe criada o respectivo construtor, que recebe por parametros o número de paletes, número de atrelados e a matricula.
@@ -103,7 +84,7 @@ Pretende-se desenvolver um protótipo para uma empresa transportadora que possui
 
 ### Nível 5:
 
-1. Implemente a classe `ShippingCompany` como uma subclasse da classe `HashSet<Transport>`. Deve considerar os seguintes atributos:
+1. Implemente a classe `ShippingCompany` **como uma subclasse** da classe `HashSet<Transport>`. Deve considerar os seguintes atributos:
 
   - `name` ( `String` ) - Representa o nome da companhia aérea transportadora.
   - `inService` ( `ArrayList<Transport>` ) - guarda os transportes da empresa aérea em serviço
@@ -114,7 +95,7 @@ Pretende-se desenvolver um protótipo para uma empresa transportadora que possui
 5. No programa principal crie uma instância da classe `ShippingCompany` para a empresa com o nome `"RELIABLE-MOVING"`.
   - Depois desta instância criada adicione a esta coleção um objeto `GroundTransportation`, dois objetos `AirTransportation` , um objeto `Lorry` e um objeto `Van`
   - Mostre os transportes criados.
-  
+
 6. Crie o método `makeTransportation` que recebe por parâmetros o `id` do transporte, a origem. o destino e o preço. Caso o `id` exista e o transporte esteja disponível (leia-se, `available=true`) modifica os valores da origem, destino, preço e disponibilidade que fica com o valor `false`. De seguida deverá inserir este transporte no `ArrayList` de transportes em serviço e remove da coleção `ShippingCompany`
   - Nota: É necessário desenvolver alguns métodos auxiliares (por exemplo, `private Transport getTransportation (String id)`)
 7. Crie o método `finalizeTransportation` que recebe por parâmetro o `id` do transporte a finalizar. Este método remove o transporte com o respetivo `id` do `ArrayList` com os transportes em utilização.
