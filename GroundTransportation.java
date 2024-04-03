@@ -33,4 +33,27 @@ public class GroundTransportation extends Transport
         return this.licensePlate;
     }
     
+    public double getPriceWithFees(){
+        return getPrice() * (1.0 + (FEES * 0.01));
+    }
+    
+    public String getTransportType(){
+        return "Transporte terreno";
+    }
+    
+    @Override
+    public String toString(){
+        final StringBuilder sb = new StringBuilder();
+
+        sb.append(String.format("\n%15s: %s\n", "Tipo Transporte", getTransportType()));  
+        sb.append(String.format("%15s: %s\n", "ID", getId()));
+        sb.append(String.format("%15s: %s\n", "Origem", getOrigin()));
+        sb.append(String.format("%15s: %s\n", "Destino", getDestination()));
+        sb.append(String.format("%15s: %5.2f€\n", "Preço", getPrice()));
+        sb.append(String.format("%15s: %4.2f%%\n", "Honorarios", FEES));
+        sb.append(String.format("%15s: %4.2f€\n", "Preço Final", getPriceWithFees()));
+     
+        return sb.toString();    
+    }
+    
 }
