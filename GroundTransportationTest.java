@@ -42,9 +42,9 @@ public class GroundTransportationTest {
                           "             ID: " + groundTransport.getId() + "\n" +
                           "         Origem: \n" +
                           "        Destino: \n" +
-                          "          Preço:  0,00€\n" +
-                          "     Honorarios: 3,00%\n" +
-                          "    Preço Final: 0,00€\n" +
+                          "          Preço:  0.00€\n" +
+                          "     Honorarios: 3.00%\n" +
+                          "    Preço Final: 0.00€\n" +
                           "      Matricula: ABC123\n";
         assertEquals(expected, groundTransport.toString());
     }

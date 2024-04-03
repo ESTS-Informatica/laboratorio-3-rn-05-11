@@ -47,7 +47,7 @@ public class AirTransportation extends Transport
     }
     
     public double getPriceWithFees(){
-        return getPrice() * (1.0 + (FEES * 0.01));
+        return getPrice() * (1.0 + FEES);
     }
     
     public String getTransportType(){
