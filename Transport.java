@@ -102,7 +102,7 @@ public class Transport {
         sb.append(String.format("%15s: %s\n", "Origem", this.origin));
         sb.append(String.format("%15s: %s\n", "Destino", this.destination));
         sb.append(String.format("%15s: %5.2f€\n", "Preço", this.price));
-        sb.append(String.format("%15s: %4.2f%%\n", "Honorarios", this.fees));
+        sb.append(String.format("%15s: %4.2f%%\n", "Honorarios", this.fees * 100));
         sb.append(String.format("%15s: %4.2f€\n", "Preço Final", getPriceWithFees()));
      
         return sb.toString();
